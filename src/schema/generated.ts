@@ -2,6 +2,7 @@ import gql from "graphql-tag";
 
 export const typeDefs = gql`
   type User {
+    id: ID!
     name: String!
   }
 
@@ -10,6 +11,7 @@ export const typeDefs = gql`
   }
 
   input UserFilter {
+    id: ID
     name: String
   }
 
