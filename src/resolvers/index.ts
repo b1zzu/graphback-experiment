@@ -8,4 +8,4 @@ export const resolvers = {
       return { id: 1, name: `GraphBack` };
     }
   }
-}
+};

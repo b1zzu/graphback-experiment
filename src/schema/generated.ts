@@ -1,12 +1,12 @@
-import gql from 'graphql-tag'
+import gql from "graphql-tag";
 
 export const typeDefs = gql`
-type User {
-  id: ID
-  name: String
-}
+  type User {
+    id: ID
+    name: String
+  }
 
-type Query {
-  me: User
-}
-`
+  type Query {
+    me: User
+  }
+`;
