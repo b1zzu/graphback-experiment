@@ -1,25 +1,16 @@
 {
-  "extends": "tslint:recommended",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-plugin-prettier"
+  ],
   "rules": {
-      "max-line-length": {
-          "options": [120]
-      },
-      "semicolon": false,
-      "quotemark": false,
-      "new-parens": true,
-      "no-arg": true,
-      "no-bitwise": true,
-      "no-conditional-assignment": false,
-      "no-consecutive-blank-lines": false,
-      "object-literal-sort-keys": false,
-      "trailing-comma": false,
-      "object-literal-shorthand": false,
-      "no-console": false,
-      "interface-name": false
-  },
-  "jsRules": {
-      "max-line-length": {
-          "options": [120]
-      }
+    "new-parens": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "object-literal-sort-keys": false,
+    "object-literal-shorthand": false,
+    "interface-name": false,
+    "prettier": true
   }
 }

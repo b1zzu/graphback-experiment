@@ -8,7 +8,9 @@
     "build": "tsc",
     "develop": "ts-node src/index.ts",
     "start": "node dist/src/index.js",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "prettier": "prettier --write '**/*.{ts,graphql,json,md}'",
+    "lint": "tslint -p . && prettier --check '**/*.{graphql,json,md}'"
   },
   "license": "Apache 2.0",
   "dependencies": {
@@ -27,6 +29,9 @@
     "@types/knex": "0.16.1",
     "prettier": "1.18.2",
     "ts-node": "8.3.0",
+    "tslint": "5.19.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
     "typescript": "3.6.2"
   }
 }
