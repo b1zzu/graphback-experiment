@@ -1,26 +1,24 @@
-## apollo-starter-ts
+# Graphback Experiment
 
-Starter template using graphback and apollo-server
+Full graphback documentation here: https://graphback.dev/
 
-### Usage
+## Dev
 
-The project has been created using `graphback`. Run the project using the following steps.
+Start the required services using docker-compose.
 
-- Start the database
-
-```
+```bash
 docker-compose up -d
 ```
 
-- Generate resources(schema and resolvers) and create database
+Generate the database schema.
 
-```
-graphback generate
+```bash
 graphback db
 ```
 
-- Start the server
+Build and start the server
 
-```
-npm start
+```bash
+npm run build
+npm run start
 ```
