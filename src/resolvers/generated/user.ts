@@ -1,6 +1,33 @@
 import { GraphQLContext } from "../../context";
 
 export const userResolvers = {
+  User: {
+    activities: (parent: any, _: any, context: GraphQLContext) => {
+      return context.db
+        .select()
+        .from("activity")
+        .where("userId", "=", parent.id);
+    },
+    comments: (parent: any, _: any, context: GraphQLContext) => {
+      return context.db
+        .select()
+        .from("comment")
+        .where("userId", "=", parent.id);
+    },
+    commentAnswers: (parent: any, _: any, context: GraphQLContext) => {
+      return context.db
+        .select()
+        .from("commentanswer")
+        .where("userId", "=", parent.id);
+    },
+    participate: (parent: any, _: any, context: GraphQLContext) => {
+      return context.db
+        .select()
+        .from("participant")
+        .where("userId", "=", parent.id);
+    }
+  },
+
   Query: {
     findUsers: (_: any, args: any, context: GraphQLContext) => {
       return context.db

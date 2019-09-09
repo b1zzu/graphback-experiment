@@ -1,4 +1,45 @@
 type User {
   id: ID!
+  name: String! # This should be unique
+  activities: [Activity]! # @OneToMany(field: "owner")
+  comments: [Comment]! # no fields in User
+  commentAnswers: [CommentAnswer]! # no fields in User
+  participate: [Participant]!
+}
+
+type Participant @disableGen {
+  id: ID!
+}
+
+type Activity {
+  id: ID!
+  # owner: User!
   name: String!
+  description: String
+  date: String!
+  place: String!
+  participants: [Participant]!
+  comments: [Comment]!
+}
+
+type Comment {
+  id: ID!
+  # author: User!
+  text: String!
+  answers: [CommentAnswer]!
+}
+
+type CommentAnswer {
+  id: ID!
+  # author: User!
+  text: String!
+}
+
+# input ParticipateInput @disableGen {
+#   activityId: ID!
+#   userId: ID!
+# }
+
+type Mutation {
+  participateToActivity(activityId: ID!, userId: ID!): Activity!
 }

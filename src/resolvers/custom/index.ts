@@ -1,1 +1,3 @@
-export const customResolvers = [];
+import { participateToActivity } from "./participateToActivity";
+
+export const customResolvers = [participateToActivity];
